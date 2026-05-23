@@ -1,0 +1,36 @@
+!!python/object:parameters.Parameters
+batch_size: 16
+config_name: /syntax/configs/config_fine_tuning_languages_qwen.yaml
+cutoff_len: 1500
+dataset_config: !!python/object:config.DatasetConfig
+  conll_test_file_path: /syntax/syntax_finetuning_data/conllu/UD_Chinese-GSD/zh_gsd-ud-test.conllu
+  dev_file_path: /syntax/syntax_finetuning_data/dataset_simple_rel/UD_Chinese-GSD/zh_gsd_grct_dev.json
+  test_file_path: /syntax/syntax_finetuning_data/dataset_simple_rel/UD_Chinese-GSD/zh_gsd_grct_test.json
+  train_file_path: /syntax/syntax_finetuning_data/dataset_simple_rel/UD_Chinese-GSD/zh_gsd_grct_train.json
+  treebank: zh_gsd_grct
+  treebank_repr: grct
+epochs: 3
+eval_steps: 10
+experiment_number: 10
+group_by_length: false
+init_lora_weights: loftq
+learning_rate: 0.0003
+lora_alpha: 16
+lora_dropout: 0.05
+lora_r: 8
+micro_batch_size: 2
+model_config: !!python/object:config.ModelConfig
+  is_instruct: true
+  model_name: Qwen/Qwen3-8B
+  per_device_eval_batch_size: 2
+  torch_empty_cache_steps: 2
+model_parameters:
+  model_name: Qwen/Qwen3-8B
+output_experiment_path: /syntax/adapters/ft_languages_qwen/Qwen3_8B_zh_gsd_grct/10
+output_model_dataset_path: /syntax/adapters/ft_languages_qwen/Qwen3_8B_zh_gsd_grct
+root_output_dir_path: /syntax/adapters/ft_languages_qwen
+save_epoch_adapters: true
+save_steps: 50
+seed: 3000
+treebank_parameters:
+  treebank_name: zh_gsd_grct
