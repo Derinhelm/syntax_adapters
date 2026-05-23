@@ -1,0 +1,24 @@
+!!python/object:parameters.Parameters
+batch_size: 16
+config_name: /syntax_finetuning/src/configs/config_qwen4_instruct_1000_2000_bots.yaml
+dataset_config: !!python/object:config.DatasetConfig
+  dev_file_path: /syntax_finetuning/src/data/syntagrus/grct_ru_syntagrus-dev.json
+  train_file_path: /syntax_finetuning/src/data/syntagrus/grct_ru_syntagrus-train.json
+  treebank: syntagrus_grct
+disable_qlora: false
+epochs: 3
+experiment_number: 0
+group_by_length: false
+learning_rate: 0.0003
+lora_alpha: 16
+lora_dropout: 0.05
+lora_r: 8
+micro_batch_size: 8
+model_config: !!python/object:config.ModelConfig
+  is_instruct: true
+  model_name: /models/Qwen3-4B
+  per_device_eval_batch_size: 1
+  torch_empty_cache_steps: 1
+root_output_dir_path: /adapters
+seed: 1000
+treebank: syntagrus
