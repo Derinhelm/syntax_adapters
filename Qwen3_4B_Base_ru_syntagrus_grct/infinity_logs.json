@@ -1,0 +1,16 @@
+[
+  {
+    "epoch": 0.6610943558810858,
+    "grad_norm": Infinity,
+    "learning_rate": 0.0002599148936170213,
+    "loss": 0.0568,
+    "step": 2877
+  },
+  {
+    "epoch": 2.065489013356312,
+    "grad_norm": Infinity,
+    "learning_rate": 0.00010391489361702126,
+    "loss": 0.0191,
+    "step": 8988
+  }
+]
